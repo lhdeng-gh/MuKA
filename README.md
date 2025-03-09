@@ -16,6 +16,12 @@ The knowledge retrieval process is intended to provide retrieval results for bui
 
 The MuKA retriever is initialized from the [PreFLMR-G](https://huggingface.co/LinWeizheDragon/PreFLMR_ViT-G) model.
 
+### Installation
+
+Following the [FLMR/how-to-use-this-package](https://github.com/LinWeizheDragon/FLMR?tab=readme-ov-file#how-to-use-this-package) instructions to clone and install FLMR first. We recommend install it as editable using `pip -e` for development purposes.
+
+We provide our modifications in diffs, so you can apply them by overwriting the files in the `flmr/` folder in the previously cloned FLMR repo.
+
 ### Retriever Training
 
 ### Retriever Indexing and Testing
@@ -30,15 +36,15 @@ The reading examples for training are derived from the same knowledge retrieval 
 
 The [LLaVA-1.5](https://github.com/haotian-liu/LLaVA) models are trained to leverage a single image as the visual context.
 
-We trained LLaVA-1.5 models for answer generators using the official LoRA fine-tuning script [finetune_lora.sh](https://github.com/haotian-liu/LLaVA/blob/main/scripts/v1_5/finetune_lora.sh), with super-parameters stated in the paper.
+We trained and tested LLaVA-1.5 models for answer generators using the official LoRA fine-tuning script [finetune_lora.sh](https://github.com/haotian-liu/LLaVA/blob/main/scripts/v1_5/finetune_lora.sh) and the evaluation script.
 
-### VILA
+### VILA Training
 
 The [VILA-1.5](https://github.com/NVlabs/VILA/tree/vila1.5) models are trained to handle contexts with multiple images as the visual context.
 
 **Installation**
 
-Following the [VILA-1.5/Installation](https://github.com/NVlabs/VILA/tree/vila1.5?tab=readme-ov-file#installation) instructions to install VILA-1.5 codebase first. We recommend to use an individual virtual environment for VILA-1.5 codebase since it does modifications to the `transformers` package in the installation.
+Following the [VILA-1.5/Installation](https://github.com/NVlabs/VILA/tree/vila1.5?tab=readme-ov-file#installation) instructions to clone and install first. We recommend to use an virtual environment since it does modifications to the `transformers` package during the installation. We recommend install it as editable using `pip -e` for development purposes.
 
 Since the official VILA-1.5 codebase does not provide an official script for LoRA fine-tuning, we implemented on our side for this purpose.
 
